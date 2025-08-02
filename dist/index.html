@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bugatti Website Clone</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="/src/input.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Dancing+Script:wght@400..700&display=swap">
+  <script src="script.js" defer></script>
+</head>
+<body class="font-poppins">
+
+  <!-- Main Wrapper -->
+  <div class="relative min-h-screen w-full overflow-hidden">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+      <source src="/Assests/1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay Content -->
+    <div class="relative z-10 min-h-screen w-full bg-black bg-opacity-50">
+
+      <!-- Navbar -->
+      <nav class="h-[6rem] w-full flex flex-wrap justify-between items-center px-6 text-white">
+        <!-- Left: Menu -->
+        <div onclick="toggleMenu()" class="menu flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md cursor-pointer">
+          <i class="fa-solid fa-bars text-[1.5rem]"></i>
+          <span class="font-poppins text-[1.2rem] md:text-[1.1rem] hidden md:block">MENU</span>
+        </div>
+
+        <!-- Center: Logo -->
+        <div class="logo mx-auto md:mx-0">
+          <span class="text-[2rem] md:text-[3rem] font-bold cursor-pointer">BUGATTI</span>
+        </div>
+
+        <!-- Right: Store -->
+        <div class="store flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md">
+          <span class="text-[1.2rem] md:text-[1.2rem] hidden md:block">STORE</span>
+          <i class="fa-solid fa-cart-shopping text-[1.5rem]"></i>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="hero_section h-[25rem] md:h-[53rem] w-full flex justify-center items-center">
+        <div class="mid text-white text-center">
+          <h2 class="text-[3rem] font-bold md:text-[4rem] md:font-medium ">THIS IS FOR ETERNITY</h2>
+          <button class="border text-[0.9rem] mt-4 md:mt-3 border-white p-2 px-4 md:py-3 md:px-5 rounded-[1.5rem] hover:bg-white hover:text-black duration-300">
+            DISCOVER THE BUGATTI TOURBILLON
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Sidebar Menu -->
+<div id="sidebar" class="fixed top-0 left-[-100%] w-full md:w-full lg:w-[60rem] p-5 h-full bg-black text-white z-50 transition-all duration-300 md:p-10 ease-in-out overflow-y-hidden">
+
+  <!-- Close Button -->
+  <div class="cut-Section flex justify-start">
+    <button onclick="toggleMenu()" class="text-white text-[3rem] md:text-[3rem]">&times;</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="columns flex flex-row w-full h-full overflow-x-hidden">
+
+    <!-- Left Side -->
+    <div class="left w-full md:min-w-[30%] md:p-4 space-y-6">
+      <div class="upper flex pt-10 gap-3 text-gray-400 text-sm md:text-base">
+        <span>HYPER</span>
+        <span>SPORTS</span>
+        <span>CARS</span>
+      </div>
+
+      <div class="links text-sm md:text-[1rem]">
+        <div class="upper-links mt-[2rem] flex flex-col gap-3">
+          <a href="#" onclick="showImages(1)">Current Models &gt;</a>
+          <a href="#" onclick="showImages(2)">Contemporary Models &gt;</a>
+          <a href="#" onclick="showImages(3)">Classical Icons &gt;</a>
+        </div>
+
+        <div class="second-links mt-5">
+          <h2 class="font-semibold text-gray-400">LA MARQUE</h2>
+          <div class="flex flex-col gap-3 mt-3">
+            <a href="#" onclick="showColorDiv('red')">Company &gt;</a>
+            <a href="#" onclick="showColorDiv('blue')">Careers</a>
+            <a href="#" onclick="showColorDiv('green')">Newsroom</a>
+          </div>
+        </div>
+
+        <div class="third-links mt-5">
+          <h2 class="font-semibold text-gray-400">OWNERSHIP</h2>
+          <div class="flex flex-col gap-3 mt-3">
+            <a href="#" onclick="showColorDiv('purple')">Dealer Finder</a>
+            <a href="#" onclick="showColorDiv('orange')">Customer Service</a>
+            <a href="#" onclick="showColorDiv('yellow')">La Maison Pur Sang</a>
+          </div>
+        </div>
+
+        <div class="forth-links mt-5">
+          <h2 class="font-semibold text-gray-400">LIFESTYLE</h2>
+          <div class="flex flex-col gap-3 mt-3">
+            <a href="#" onclick="showColorDiv('pink')">Collections &gt;</a>
+            <a href="#" onclick="showColorDiv('gray')">BUGATTI Store</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div id="rightSection" class="right min-w-[80%] hidden md:block md:min-w-[70%] p-4">
+      <!-- Images Section -->
+      <div id="imagesContainer" class="flex flex-col justify-center items-center gap-10">
+        <div class="img1  w-full flex justify-center">
+          <img id="img1" src="/Assests/1.png" class="h-[15rem] w-full object-contain hover:-translate-y-2 transition-transform duration-300 delay-2000" alt="img1">
+        </div>
+        <div class="img2  w-full flex justify-center">
+          <img id="img2" src="/Assests/2.png" class="h-[15rem] w-full object-contain hover:-translate-y-2 transition-transform duration-300  delay-2000" alt="img2">
+        </div>
+        <div class="img3 w-full flex justify-center">
+          <img id="img3" src="/Assests/3.png" class="h-[15rem] w-full object-contain hover:-translate-y-2 transition-transform duration-300 delay-2000" alt="img3">
+        </div>
+      </div>
+
+      <!-- Colored Div Placeholder -->
+      <div id="colorDiv" class="w-full h-[45rem] hidden rounded-xl shadow-md"></div>
+    </div>
+  </div>
+</div>
+<!-- Record Section -->
+<div class="record-section relative h-[60rem] w-full overflow-hidden">
+  
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="/Assests/2.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content Over Video -->
+  <div class="relative z-10 w-full h-full flex items-end text-white px-4 pb-10">
+    <div class="text flex flex-col md:flex-row items-start justify-between gap-10 md:gap-20 w-full max-w-7xl mx-auto">
+      
+      <!-- Left Text -->
+      <div class="left-text text-left">
+        <h2 class="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-medium leading-tight">
+          A Record Breaking - <br class="hidden md:block"> Force of Nature
+        </h2>
+      </div>
+
+      <!-- Right Text -->
+      <div class="right text-left">
+        <h2 class="text-[1rem] sm:text-[1.1rem] md:text-[1.3rem] font-bitcount">
+          Setting a new benchmark at 453.81 km/h. <br> A triumph of passion, <br> precision, and performance.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Blog section -->
+<div class="blog min-h-screen w-full pt-[10rem] md:pt-[10rem] lg:p-[10rem] bg-black flex justify-center px-4 py-10">
+  <div class="mid-blog grid grid-cols-1 place-content-center md:grid-cols-2  lg:grid-cols-3 gap-12 w-full max-w-[120rem]">
+    
+    <!-- Card 1 -->
+    <div class="card h-[35rem] w-full group overflow-hidden">
+      <div class="img relative h-full">
+        <img src="/Assests/blog1.avif"
+          class="w-full h-[23.5rem] object-cover object-center rounded-[0.5rem] transition-all duration-500 group-hover:brightness-50 group-hover:scale-[0.95]" alt="">
+        <div class="text-blog p-5">
+          <h2 class="text-white text-[2rem] font-bold">DISCOVER BUGATTI</h2>
+          <a href="#" class="text-white text-[1rem]">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card h-[35rem] w-full group overflow-hidden">
+      <div class="img relative h-full">
+        <img src="/Assests/blog2.jpg"
+          class="w-full h-[23.5rem] object-cover object-center rounded-[0.5rem] transition-all duration-500 group-hover:brightness-50 group-hover:scale-[0.95]" alt="">
+        <div class="text-blog p-5">
+          <h2 class="text-white text-[2rem] font-bold">OUR HISTORY</h2>
+          <a href="#" class="text-white text-[1rem]">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card h-[35rem] w-full group overflow-hidden">
+      <div class="img relative h-full">
+        <img src="/Assests/blog2.avif"
+          class="w-full h-[23.5rem] object-cover object-center rounded-[0.5rem] transition-all duration-500 group-hover:brightness-50 group-hover:scale-[0.95]" alt="">
+        <div class="text-blog p-5">
+          <h2 class="text-white text-[2rem] font-bold">CAREERS AT BUGATTI</h2>
+          <a href="#" class="text-white text-[1rem]">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- sports section -->
+<div class="sports-section w-full bg-black text-white py-10 px-4">
+  <!-- Section Title -->
+  <div class="text text-[2rem] sm:text-[2.5rem] lg:text-[3rem] text-center lg:text-left lg:pl-[20rem] mb-10 font-bold">
+    OUR HYPER SPORTS CARS
+  </div>
+
+  <!-- Card Grid -->
+  <div class="images flex justify-center items-center">
+    <div class="img-showcase w-full max-w-[90rem] bg-black grid grid-cols-1 md:grid-cols-2 gap-10 p-6 sm:p-10 ">
+
+      <!-- Card 1 -->
+      <div class="image1 relative group h-[25rem] sm:h-[50rem] w-full  overflow-hidden rounded-md">
+        
+        <!-- Default Image -->
+        <img src="/Assests/taha1.png"
+             class="absolute top-0 left-0 w-full h-full object-cover object-center transition-opacity duration-500 group-hover:opacity-0 z-0" alt="Car Image" />
+
+        <!-- Hover Video -->
+        <video
+          class="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+          muted loop playsinline>
+          <source src="/Assests/blog-video-1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Text Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="image1 relative group h-[25rem] sm:h-[50rem] w-full overflow-hidden rounded-md">
+        
+        <!-- Default Image -->
+        <img src="/Assests/taha2.png"
+             class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0" alt="Car Image" />
+
+        <!-- Hover Video -->
+        <video
+          class="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+          muted loop playsinline>
+          <source src="/Assests/blog-video-2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Text Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+        </div>
+      </div>
+
+
+
+       <!-- Card 3 -->
+      <div class="image1 relative group h-[25rem] sm:h-[50rem] w-full overflow-hidden rounded-md">
+        
+        <!-- Default Image -->
+        <img src="/Assests/taha4.png"
+             class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0" alt="Car Image" />
+
+        <!-- Hover Video -->
+        <video
+          class="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+          muted loop playsinline>
+          <source src="/Assests/taha3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Text Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+        </div>
+      </div>
+
+
+<!-- Card 4 -->
+<div class="image1 relative group h-[25rem] sm:h-[50rem] w-full overflow-hidden rounded-md">
+  
+  <!-- Image (Zoom Out on Hover) -->
+  <img src="/Assests/taha5.png"
+       alt="Car Image"
+       class="absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+
+  <!-- Text Overlay (if any) -->
+  <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+    <!-- Optional heading or button -->
+  </div>
+</div>
+
+
+
+
+
+<!-- Card 5 -->
+<div class="image1 relative group h-[25rem] sm:h-[50rem] w-full overflow-hidden rounded-md">
+  
+  <!-- Image (Zoom Out on Hover) -->
+  <img src="/Assests/taha6.png"
+       alt="Car Image"
+       class="absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+
+  <!-- Text Overlay (if any) -->
+  <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+    <!-- Optional heading or button -->
+  </div>
+</div>
+      
+
+
+
+
+
+
+<!-- Card 6 -->
+<div class="image1 relative group h-[25rem] sm:h-[50rem] w-full overflow-hidden rounded-md">
+  
+  <!-- Image (Zoom Out on Hover) -->
+  <img src="/Assests/taha7.png"
+       alt="Car Image"
+       class="absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+
+  <!-- Text Overlay (if any) -->
+  <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center">
+    <!-- Optional heading or button -->
+  </div>
+</div>
+      
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Sur Measure Text -->
+<div class="measure-text bg-black text-white px-4 md:px-32 py-12 md:py-20 lg:pl-[14rem]">
+  <h2 class="text-[2rem] md:text-[2.7rem] font-bold ">BUGATTI SUR MEASURE</h2>
+  <p class="mt-2 text-base md:text-lg font-poppins">The pinnacle of automotive engineering and ultra-luxury lifestyle.</p>
+</div>
+
+<!-- Sur Measure Section -->
+<div class="sur-measure-section w-full bg-black flex justify-center items-center px-4 md:px-0 py-10">
+  <div class="mid-measure w-full max-w-[90rem] bg-[#131313] border border-gray-400 flex flex-col md:flex-row overflow-hidden">
+
+    <!-- Left Image -->
+    <div class="left-mid w-full md:w-1/2 h-[18rem] md:h-[40rem]">
+      <img src="/Assests/image-logo.avif" class="w-full h-full object-cover object-center" alt="Car Interior" />
+    </div>
+
+    <!-- Right Text -->
+    <div class="right-mid w-full md:w-1/2 text-white p-6 md:p-16 flex flex-col justify-between h-full">
+      
+      <!-- Upper Text -->
+      <div class="upper-text space-y-4">
+        <h2 class="text-[2rem] md:text-[3rem] font-bitcount leading-tight">
+          HERITAGE,<br />CRAFTSMANSHIP<br />AND INNOVATION
+        </h2>
+        <p class="text-sm md:text-base font-poppins">
+          At BUGATTI, we translate our customers' vision to create unique pieces of personalized automotive art.
+        </p>
+      </div>
+
+      <!-- Lower CTA -->
+      <div class="lower-text mt-8">
+        <a href="#" class="inline-block border border-white px-6 py-3 text-sm hover:bg-white hover:text-black transition-all duration-300">LEARN MORE ABOUT SUR MESURE</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="show-case w-full bg-black px-4 py-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[90rem] mx-auto">
+    
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last1.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last2.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last3.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last4.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last5.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+    <div class="cards h-[25rem] md:h-[34rem] overflow-hidden">
+      <img src="/Assests/last6.jpg" 
+           class="h-full w-full object-cover transition-all duration-500 hover:scale-90 hover:opacity-70" 
+           alt="">
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
