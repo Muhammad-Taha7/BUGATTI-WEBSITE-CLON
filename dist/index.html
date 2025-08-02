@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Dancing+Script:wght@400..700&display=swap">
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="script.js" defer></script>
 </head>
 <body class="font-poppins bg-black">
@@ -29,18 +31,18 @@
       <!-- Navbar -->
       <nav class="h-[6rem] w-full flex flex-wrap justify-between items-center px-6 text-white">
         <!-- Left: Menu -->
-        <div onclick="toggleMenu()" class="menu flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md cursor-pointer">
-          <i class="fa-solid fa-bars text-[1.5rem]"></i>
+        <div data-aos="zoom-in" onclick="toggleMenu()" class="menu flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md cursor-pointer">
+          <i  class="fa-solid fa-bars text-[1.5rem]"></i>
           <span class="font-poppins text-[1.2rem] md:text-[1.1rem] hidden md:block">MENU</span>
         </div>
 
         <!-- Center: Logo -->
-        <div class="logo mx-auto md:mx-0">
+        <div data-aos="zoom-in" class="logo mx-auto md:mx-0">
           <span class="text-[2rem] md:text-[3rem] font-bold cursor-pointer">BUGATTI</span>
         </div>
 
         <!-- Right: Store -->
-        <div class="store flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md">
+        <div data-aos="zoom-in" class="store flex items-center gap-2 hover:bg-[#343434] p-2 rounded-md">
           <span class="text-[1.2rem] md:text-[1.2rem] hidden md:block">STORE</span>
           <i class="fa-solid fa-cart-shopping text-[1.5rem]"></i>
         </div>
@@ -48,8 +50,8 @@
 
       <!-- Hero Section -->
       <div class="hero_section h-[25rem] md:h-[53rem] w-full flex justify-center items-center">
-        <div class="mid text-white text-center">
-          <h2 class="text-[3rem] font-bold md:text-[4rem] md:font-medium ">THIS IS FOR ETERNITY</h2>
+        <div data-aos="zoom-in"  class="mid text-white text-center">
+          <h2  class="text-[3rem] font-bold md:text-[4rem] md:font-medium ">THIS IS FOR ETERNITY</h2>
           <button class="border text-[0.9rem] mt-4 md:mt-3 border-white p-2 px-4 md:py-3 md:px-5 rounded-[1.5rem] hover:bg-white hover:text-black duration-300">
             DISCOVER THE BUGATTI TOURBILLON
           </button>
@@ -142,10 +144,10 @@
 
   <!-- Content Over Video -->
   <div class="relative z-10 w-full h-full flex items-end text-white px-4 pb-10">
-    <div class="text flex flex-col md:flex-row items-start justify-between gap-10 md:gap-20 w-full max-w-7xl mx-auto">
+    <div  data-aos="zoom-in" class="text flex flex-col md:flex-row items-start justify-between gap-10 md:gap-20 w-full max-w-7xl mx-auto">
       
       <!-- Left Text -->
-      <div class="left-text text-left">
+      <div  class="left-text text-left">
         <h2 class="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-medium leading-tight">
           A Record Breaking - <br class="hidden md:block"> Force of Nature
         </h2>
@@ -490,7 +492,7 @@
 
 
 
-
-
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
