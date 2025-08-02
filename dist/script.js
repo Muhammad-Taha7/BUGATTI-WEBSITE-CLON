@@ -13,17 +13,17 @@
     document.getElementById('colorDiv').style.display = 'none';
 
     if (setNumber === 1) {
-      img1.src = "/Assests/1.png";
-      img2.src = "/Assests/2.png";
-      img3.src = "/Assests/3.png";
+      img1.src = "/dist/Assests/1.png";
+      img2.src = "/dist/Assests/2.png";
+      img3.src = "/dist/Assests/3.png";
     } else if (setNumber === 2) {
-      img1.src = "/Assests/4.png";
-      img2.src = "/Assests/5.png";
-      img3.src = "/Assests/6.png";
+      img1.src = "/dist/Assests/4.png";
+      img2.src = "/dist/Assests/5.png";
+      img3.src = "/dist/Assests/6.png";
     } else if (setNumber === 3) {
-      img1.src = "/Assests/7.png";
-      img2.src = "/Assests/8.png";
-      img3.src = "/Assests/9.png";
+      img1.src = "/dist/Assests/7.png";
+      img2.src = "/dist/Assests/8.png";
+      img3.src = "/dist/Assests/9.png";
     }
   }
 
